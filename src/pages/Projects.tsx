@@ -2,51 +2,29 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "@/components/ProjectCard";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-// Sample project data - this can be replaced with real data
+// Updated project data - only E-commerce and Cloud-based File Management
 const projects = [
   {
-    title: "Cybersecurity Analysis Tool",
-    description: "A comprehensive tool for analyzing security vulnerabilities in web applications.",
-    tags: ["Python", "Cybersecurity", "Data Analysis"],
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80",
-  },
-  {
-    title: "Data Visualization Dashboard",
-    description: "Interactive dashboard for visualizing complex datasets with customizable filters.",
-    tags: ["JavaScript", "Data Visualization", "React"],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80",
-  },
-  {
-    title: "AI-powered Content Recommender",
-    description: "Machine learning algorithm that provides personalized content recommendations.",
-    tags: ["Python", "Machine Learning", "AI"],
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80",
-  },
-  {
     title: "E-Commerce Mobile App",
-    description: "Android application for an e-commerce platform with secure payment integration.",
-    tags: ["Android", "Java", "UX/UI"],
+    description: "Developed a complete e-commerce solution with a responsive design, secure payment integration, and user-friendly interface. The app features product categorization, wishlists, and a streamlined checkout process.",
+    tags: ["Android", "Java", "UX/UI", "Payment Gateway", "Firebase"],
     image: "https://images.unsplash.com/photo-1565492206137-0797b8f8ace5?auto=format&fit=crop&q=80",
+    link: "https://example.com/ecommerce",
   },
   {
     title: "Cloud-based File Management",
-    description: "System for securely storing and managing files on the cloud with access controls.",
-    tags: ["Cloud", "Security", "AWS"],
+    description: "Built a secure cloud storage system with role-based access controls, file versioning, and real-time collaboration features. The solution includes encryption at rest and in transit, comprehensive audit logs, and integrations with popular productivity tools.",
+    tags: ["Cloud", "Security", "AWS", "React", "Node.js"],
     image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
-  },
-  {
-    title: "Portfolio Website Generator",
-    description: "Tool that automatically generates professional portfolio websites from resume data.",
-    tags: ["HTML/CSS", "JavaScript", "Web Development"],
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&q=80",
+    link: "https://example.com/cloud-storage",
   },
 ];
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [filter, setFilter] = useState("all");
-  const [filteredProjects, setFilteredProjects] = useState(projects);
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
   
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -56,89 +34,115 @@ const Projects = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  useEffect(() => {
-    if (filter === "all") {
-      setFilteredProjects(projects);
-    } else {
-      setFilteredProjects(
-        projects.filter(project => 
-          project.tags.some(tag => 
-            tag.toLowerCase().includes(filter.toLowerCase())
-          )
-        )
-      );
-    }
-  }, [filter]);
-  
-  const filters = [
-    { id: "all", label: "All Projects" },
-    { id: "web", label: "Web Development" },
-    { id: "data", label: "Data Analysis" },
-    { id: "ai", label: "AI & ML" },
-    { id: "mobile", label: "Mobile Apps" },
-    { id: "cloud", label: "Cloud" },
-  ];
-
   return (
     <div className="min-h-screen py-24 md:py-32 relative overflow-hidden">
+      {/* Decorative elements */}
       <div className="absolute -z-10 top-0 right-0 h-[50vh] w-[50vh] rounded-full bg-primary/5 blur-[80px]"></div>
       <div className="absolute -z-10 bottom-0 left-0 h-[40vh] w-[40vh] rounded-full bg-primary/5 blur-[60px]"></div>
+      <div className="absolute -z-10 top-1/3 left-1/4 h-[30vh] w-[30vh] rounded-full bg-indigo-500/5 blur-[100px]"></div>
       
       <div className="container mx-auto px-6">
-        <h1 className={cn(
-          "text-4xl md:text-5xl font-display font-bold mb-8 opacity-0",
-          isVisible && "animate-fade-in"
-        )}>
-          My Projects
-        </h1>
-        
-        <div className={cn(
-          "mb-12 opacity-0",
-          isVisible && "animate-fade-in delay-100"
-        )}>
-          <p className="text-xl text-foreground/80 max-w-3xl">
-            Explore my portfolio of projects spanning various domains including web development, 
-            cybersecurity, data analytics, and artificial intelligence.
-          </p>
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
+          {/* Profile section */}
+          <div className={cn(
+            "opacity-0 transition-all duration-700 transform translate-y-4",
+            isVisible && "opacity-100 translate-y-0"
+          )}>
+            <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-xl">
+              <AvatarImage src="/lovable-uploads/fea1a9e7-da13-4f3e-8c3b-503ef36fe50b.png" alt="Kala Tirumala" />
+              <AvatarFallback>KTV</AvatarFallback>
+            </Avatar>
+          </div>
+          
+          <div className="text-center md:text-left">
+            <h1 className={cn(
+              "text-4xl md:text-5xl font-display font-bold mb-4 opacity-0 transition-all duration-700 delay-100",
+              isVisible && "opacity-100"
+            )}>
+              My Projects
+            </h1>
+            
+            <div className={cn(
+              "opacity-0 transition-all duration-700 delay-200",
+              isVisible && "opacity-100"
+            )}>
+              <p className="text-xl text-foreground/80 max-w-3xl">
+                Showcasing my expertise in mobile application development and cloud infrastructure. 
+                These projects represent my passion for creating scalable, secure, and user-friendly solutions.
+              </p>
+            </div>
+          </div>
         </div>
         
-        <div className={cn(
-          "flex flex-wrap gap-3 mb-12 opacity-0",
-          isVisible && "animate-fade-in delay-200"
-        )}>
-          {filters.map(filterItem => (
-            <button
-              key={filterItem.id}
-              onClick={() => setFilter(filterItem.id)}
-              className={cn(
-                "px-4 py-2 rounded-full transition-all duration-300",
-                filter === filterItem.id
-                  ? "bg-primary text-white"
-                  : "bg-secondary text-foreground/70 hover:bg-primary/10"
-              )}
-            >
-              {filterItem.label}
-            </button>
-          ))}
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {projects.map((project, index) => (
             <div 
               key={project.title}
               className={cn(
-                "opacity-0",
-                isVisible && `animate-fade-in delay-${Math.min(index * 100 + 300, 800)}`
+                "opacity-0 transition-all duration-700",
+                isVisible && `opacity-100 delay-${300 + index * 200}`
               )}
+              onClick={() => setSelectedProject(project)}
             >
-              <ProjectCard {...project} />
+              <ProjectCard 
+                {...project} 
+                className="hover:scale-105 transition-all duration-500 h-full cursor-pointer"
+              />
             </div>
           ))}
         </div>
         
-        {filteredProjects.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-xl text-foreground/60">No projects match your filter criteria.</p>
+        {/* Project details modal */}
+        {selectedProject && (
+          <div 
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4" 
+            onClick={() => setSelectedProject(null)}
+          >
+            <div 
+              className="bg-background/95 backdrop-blur-md border border-primary/10 rounded-2xl p-6 max-w-3xl max-h-[90vh] overflow-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {selectedProject.image && (
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title} 
+                  className="w-full h-64 object-cover rounded-xl mb-6"
+                />
+              )}
+              <h2 className="text-3xl font-display font-bold mb-4">{selectedProject.title}</h2>
+              <p className="text-lg mb-6">{selectedProject.description}</p>
+              
+              <div className="flex flex-wrap gap-2 mb-6">
+                {selectedProject.tags.map((tag) => (
+                  <span 
+                    key={tag} 
+                    className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              
+              {selectedProject.link && (
+                <a 
+                  href={selectedProject.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                >
+                  View Project
+                </a>
+              )}
+              
+              <button
+                className="absolute top-4 right-4 bg-primary/10 hover:bg-primary/20 rounded-full p-2 transition-colors"
+                onClick={() => setSelectedProject(null)}
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </button>
+            </div>
           </div>
         )}
       </div>
