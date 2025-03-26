@@ -29,7 +29,7 @@ export const Hero = () => {
           )}>
             <div className="mb-3">
               <span className="inline-block px-4 py-2 border border-primary/20 rounded-full text-sm font-medium text-primary/80">
-                Software Engineer & Developer
+                UI/UX Designer & Developer
               </span>
             </div>
             
