@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "@/components/ProjectCard";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 // Updated project data - only E-commerce and Cloud-based File Management
 const projects = [
@@ -48,10 +47,13 @@ const Projects = () => {
             "opacity-0 transition-all duration-700 transform translate-y-4",
             isVisible && "opacity-100 translate-y-0"
           )}>
-            <Avatar className="w-32 h-32 border-4 border-primary/20 shadow-xl">
-              <AvatarImage src="/lovable-uploads/fea1a9e7-da13-4f3e-8c3b-503ef36fe50b.png" alt="Kala Tirumala" />
-              <AvatarFallback>KTV</AvatarFallback>
-            </Avatar>
+            <div className="w-32 h-48 rounded-xl overflow-hidden border-4 border-primary/20 shadow-xl">
+              <img 
+                src="/lovable-uploads/fea1a9e7-da13-4f3e-8c3b-503ef36fe50b.png" 
+                alt="Kala Tirumala"
+                className="w-full h-full object-cover object-center" 
+              />
+            </div>
           </div>
           
           <div className="text-center md:text-left">

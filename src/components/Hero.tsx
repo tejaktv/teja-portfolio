@@ -66,10 +66,13 @@ export const Hero = () => {
             "order-1 md:order-2 opacity-0 transition-all duration-500",
             isVisible && "animate-fade-in delay-400"
           )}>
-            <Avatar className="w-48 h-48 border-4 border-primary/20 shadow-2xl">
-              <AvatarImage src="/lovable-uploads/fea1a9e7-da13-4f3e-8c3b-503ef36fe50b.png" alt="Kala Tirumala" />
-              <AvatarFallback>KTV</AvatarFallback>
-            </Avatar>
+            <div className="w-48 h-64 md:w-56 md:h-80 rounded-2xl overflow-hidden border-4 border-primary/20 shadow-2xl">
+              <img 
+                src="/lovable-uploads/fea1a9e7-da13-4f3e-8c3b-503ef36fe50b.png" 
+                alt="Kala Tirumala" 
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
           </div>
         </div>
 
