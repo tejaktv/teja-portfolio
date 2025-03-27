@@ -3,8 +3,15 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "@/components/ProjectCard";
 
-// Updated project data - only E-commerce and Cloud-based File Management
+// Updated project data with SkillConnect added
 const projects = [
+  {
+    title: "SkillConnect - MERN Stack Hackathon",
+    description: "A web platform where college students can showcase their skills, connect with people who share similar interests, and join open chat rooms based on preferred skills. I took on UI/UX design and frontend development responsibilities, creating an intuitive and engaging user experience.",
+    tags: ["MERN Stack", "React.js", "Node.js", "MongoDB", "UI/UX Design", "Figma", "Responsive Design"],
+    image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80",
+    link: "https://example.com/skillconnect",
+  },
   {
     title: "E-Commerce Mobile App",
     description: "Developed a complete e-commerce solution with a responsive design, secure payment integration, and user-friendly interface. The app features product categorization, wishlists, and a streamlined checkout process.",
@@ -69,7 +76,7 @@ const Projects = () => {
               isVisible && "opacity-100"
             )}>
               <p className="text-xl text-foreground/80 max-w-3xl">
-                Showcasing my expertise in mobile application development and cloud infrastructure. 
+                Showcasing my expertise in web and mobile development, UI/UX design, and cloud infrastructure. 
                 These projects represent my passion for creating scalable, secure, and user-friendly solutions.
               </p>
             </div>
