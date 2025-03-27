@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -26,7 +25,6 @@ const ContactPage = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const { toast } = useToast();
   
-  // Form state
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -53,7 +51,6 @@ const ContactPage = () => {
     
     setIsSubmitting(true);
     
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setFormSubmitted(true);
@@ -73,7 +70,6 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen py-24 md:py-32 relative overflow-hidden">
-      {/* Background elements */}
       <div className="absolute -z-10 top-0 right-0 h-[50vh] w-[50vh] rounded-full bg-primary/5 blur-[80px]"></div>
       <div className="absolute -z-10 bottom-0 left-0 h-[40vh] w-[40vh] rounded-full bg-primary/5 blur-[60px]"></div>
       <div className="absolute -z-10 top-1/3 left-1/4 h-[30vh] w-[30vh] rounded-full bg-indigo-500/5 blur-[100px]"></div>
@@ -87,7 +83,6 @@ const ContactPage = () => {
         </h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-          {/* Contact form */}
           <div className={cn(
             "opacity-0 order-2 md:order-1",
             isVisible && "animate-fade-in delay-100"
@@ -164,7 +159,6 @@ const ContactPage = () => {
             </div>
           </div>
           
-          {/* Contact information */}
           <div className={cn(
             "opacity-0 relative order-1 md:order-2",
             isVisible && "animate-fade-in delay-200"
@@ -235,8 +229,8 @@ const ContactPage = () => {
                       <div className="p-3 rounded-full bg-primary/10">
                         <Github className="w-5 h-5 text-primary" />
                       </div>
-                      <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline group relative">
-                        github.com/kala-teja
+                      <a href="https://github.com/tejaktv" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline group relative">
+                        github.com/tejaktv
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                       </a>
                     </div>
@@ -251,7 +245,6 @@ const ContactPage = () => {
                 </div>
               </div>
               
-              {/* Location and time */}
               <div className="mt-8 flex flex-col space-y-4">
                 <div className="flex items-center gap-3">
                   <Map className="text-primary/70 w-5 h-5" />
@@ -268,7 +261,7 @@ const ContactPage = () => {
                    className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
                   <Twitter className="w-5 h-5 text-primary" />
                 </a>
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/tejaktv" target="_blank" rel="noopener noreferrer"
                    className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
                   <Github className="w-5 h-5 text-primary" />
                 </a>
@@ -281,7 +274,6 @@ const ContactPage = () => {
           </div>
         </div>
         
-        {/* FAQ Section */}
         <div className={cn(
           "mt-24 opacity-0",
           isVisible && "animate-fade-in delay-300"
