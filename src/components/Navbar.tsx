@@ -88,6 +88,17 @@ export const Navbar = () => {
           >
             Resume
           </NavLink>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              cn(
+                "link-underline py-2 smooth-transition",
+                isActive ? "text-primary font-medium" : "text-foreground/80"
+              )
+            }
+          >
+            Contact
+          </NavLink>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -172,6 +183,18 @@ export const Navbar = () => {
             }
           >
             Resume
+          </NavLink>
+          <NavLink
+            to="/contact"
+            onClick={() => setIsMobileMenuOpen(false)}
+            className={({ isActive }) =>
+              cn(
+                "py-2 px-4 smooth-transition",
+                isActive ? "text-primary font-medium" : "text-foreground/80"
+              )
+            }
+          >
+            Contact
           </NavLink>
         </div>
       </div>
