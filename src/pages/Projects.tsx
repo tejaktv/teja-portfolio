@@ -1,10 +1,6 @@
-
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "@/components/ProjectCard";
-import { Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 
 // Updated project data with SkillConnect added
 const projects = [
@@ -42,24 +38,6 @@ const Projects = () => {
     
     return () => clearTimeout(timer);
   }, []);
-  
-  const handleDownloadResume = () => {
-    // In a real app, this would trigger a download of the actual resume file
-    toast.success("Resume download started", {
-      description: "Your download will begin shortly."
-    });
-    
-    // Simulate a file download - in production this would be a real file URL
-    setTimeout(() => {
-      // Create a temporary link element
-      const link = document.createElement('a');
-      link.href = '/resume.pdf'; // This would be a real PDF in production
-      link.download = 'Kala_Teja_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }, 1000);
-  };
   
   return (
     <div className="min-h-screen py-24 md:py-32 relative overflow-hidden">
@@ -100,15 +78,6 @@ const Projects = () => {
                 Showcasing my expertise in web and mobile development, UI/UX design, and cloud infrastructure. 
                 These projects represent my passion for creating scalable, secure, and user-friendly solutions.
               </p>
-              
-              <Button 
-                onClick={handleDownloadResume}
-                className="mt-4 gap-2 shadow-md hover:shadow-lg transition-all duration-300"
-                size="lg"
-              >
-                <Download size={18} />
-                Download My Resume
-              </Button>
             </div>
           </div>
         </div>

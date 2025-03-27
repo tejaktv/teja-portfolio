@@ -1,6 +1,9 @@
 
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { Download } from "lucide-react";
+import { toast } from "sonner";
 
 const Resume = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,9 +16,22 @@ const Resume = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleDownloadClick = () => {
-    // In a real app, this would download the actual resume file
-    alert("In a real application, this would download the resume PDF.");
+  const handleDownloadResume = () => {
+    // In a real app, this would trigger a download of the actual resume file
+    toast.success("Resume download started", {
+      description: "Your download will begin shortly."
+    });
+    
+    // Simulate a file download - in production this would be a real file URL
+    setTimeout(() => {
+      // Create a temporary link element
+      const link = document.createElement('a');
+      link.href = '/resume.pdf'; // This would be a real PDF in production
+      link.download = 'Kala_Teja_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }, 1000);
   };
 
   return (
@@ -36,15 +52,14 @@ const Resume = () => {
               <p className="text-xl text-foreground/80">
                 My professional background and qualifications
               </p>
-              <button 
-                onClick={handleDownloadClick}
+              <Button
+                onClick={handleDownloadResume}
                 className="sm:ml-auto px-6 py-2 bg-primary text-white rounded-lg hover:shadow-lg transition-all duration-300 flex items-center gap-2"
+                size="lg"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
-                </svg>
-                Download PDF
-              </button>
+                <Download size={18} />
+                Download Resume PDF
+              </Button>
             </div>
           </header>
           
