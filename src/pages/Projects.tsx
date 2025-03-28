@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "@/components/ProjectCard";
 
-// Updated project data with SkillConnect added
+// Updated project data with SkillConnect added and Cloud-based File Management removed
 const projects = [
   {
     title: "SkillConnect - MERN Stack Hackathon",
@@ -17,13 +17,6 @@ const projects = [
     tags: ["Android", "Java", "UX/UI", "Payment Gateway", "Firebase"],
     image: "https://images.unsplash.com/photo-1565492206137-0797b8f8ace5?auto=format&fit=crop&q=80",
     link: "https://example.com/ecommerce",
-  },
-  {
-    title: "Cloud-based File Management",
-    description: "Built a secure cloud storage system with role-based access controls, file versioning, and real-time collaboration features. The solution includes encryption at rest and in transit, comprehensive audit logs, and integrations with popular productivity tools.",
-    tags: ["Cloud", "Security", "AWS", "React", "Node.js"],
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80",
-    link: "https://example.com/cloud-storage",
   },
 ];
 

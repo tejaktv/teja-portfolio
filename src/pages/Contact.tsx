@@ -1,4 +1,3 @@
-
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -53,24 +52,11 @@ const ContactPage = () => {
     
     setIsSubmitting(true);
     
-    // Prepare template parameters - these will be sent in the email
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      to_email: "teja.ktv10@gmail.com", // Your email address
-      message: message,
-    };
-    
     try {
-      // Send email using EmailJS
-      // You'll need to sign up on EmailJS and get your own service ID, template ID and user ID
-      // I'm using placeholder values here - you'll need to replace these
-      await emailjs.send(
-        "service_placeholder", // Replace with your Service ID
-        "template_placeholder", // Replace with your Template ID
-        templateParams,
-        "user_placeholder" // Replace with your User ID
-      );
+      // Instead of using EmailJS which requires API keys, we'll directly open the mail client
+      const emailSubject = encodeURIComponent(`Portfolio Contact - Message from ${name}`);
+      const emailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+      window.location.href = `mailto:teja.ktv10@gmail.com?subject=${emailSubject}&body=${emailBody}`;
       
       setIsSubmitting(false);
       setFormSubmitted(true);
@@ -79,19 +65,19 @@ const ContactPage = () => {
       setMessage("");
       
       toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. Your message has been emailed to Teja.",
+        title: "Email client opened",
+        description: "An email draft has been prepared for you to send to Teja.",
         variant: "default"
       });
       
       setTimeout(() => setFormSubmitted(false), 5000);
     } catch (error) {
-      console.error("Failed to send email:", error);
+      console.error("Failed to open email client:", error);
       setIsSubmitting(false);
       
       toast({
-        title: "Error sending message",
-        description: "There was a problem sending your message. Please try again later.",
+        title: "Error",
+        description: "There was a problem opening your email client. Please try again or send an email directly.",
         variant: "destructive"
       });
     }
