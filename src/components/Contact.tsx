@@ -3,11 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { useToast } from "@/components/ui/use-toast";
 
 export const Contact = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
+  const { toast } = useToast();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -26,6 +28,22 @@ export const Contact = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  const handleEmailClick = () => {
+    window.location.href = 'mailto:teja.ktv10@gmail.com';
+    toast({
+      title: "Email action",
+      description: "Opening email client to send a message to teja.ktv10@gmail.com",
+    });
+  };
+
+  const handlePhoneClick = () => {
+    window.location.href = 'tel:+919618490260';
+    toast({
+      title: "Phone action",
+      description: "Initiating call to +91 9618490260",
+    });
+  };
 
   return (
     <section ref={sectionRef} className="section-padding" id="contact">
@@ -108,6 +126,18 @@ export const Contact = () => {
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                       </a>
                     </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 rounded-full bg-primary/10">
+                        <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </div>
+                      <a href="https://github.com/tejaktv" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline group relative">
+                        github.com/tejaktv
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -115,14 +145,14 @@ export const Contact = () => {
               <div className="mt-10 flex flex-wrap justify-center md:justify-start gap-4">
                 <Button 
                   className="bg-gradient-to-r from-primary to-indigo-600 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
-                  onClick={() => window.location.href = 'mailto:teja.ktv10@gmail.com'}
+                  onClick={handleEmailClick}
                 >
                   Send Email
                 </Button>
                 <Button 
                   variant="outline" 
                   className="border-primary text-primary hover:bg-primary/5"
-                  onClick={() => window.location.href = 'tel:+919618490260'}
+                  onClick={handlePhoneClick}
                 >
                   Call Me
                 </Button>

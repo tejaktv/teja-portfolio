@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -5,6 +6,7 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import emailjs from 'emailjs-com';
 import { 
   Mail, 
   Phone, 
@@ -37,7 +39,7 @@ const ContactPage = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!name || !email || !message) {
@@ -51,7 +53,25 @@ const ContactPage = () => {
     
     setIsSubmitting(true);
     
-    setTimeout(() => {
+    // Prepare template parameters - these will be sent in the email
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_email: "teja.ktv10@gmail.com", // Your email address
+      message: message,
+    };
+    
+    try {
+      // Send email using EmailJS
+      // You'll need to sign up on EmailJS and get your own service ID, template ID and user ID
+      // I'm using placeholder values here - you'll need to replace these
+      await emailjs.send(
+        "service_placeholder", // Replace with your Service ID
+        "template_placeholder", // Replace with your Template ID
+        templateParams,
+        "user_placeholder" // Replace with your User ID
+      );
+      
       setIsSubmitting(false);
       setFormSubmitted(true);
       setName("");
@@ -60,12 +80,21 @@ const ContactPage = () => {
       
       toast({
         title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
+        description: "Thank you for reaching out. Your message has been emailed to Teja.",
         variant: "default"
       });
       
       setTimeout(() => setFormSubmitted(false), 5000);
-    }, 1500);
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      setIsSubmitting(false);
+      
+      toast({
+        title: "Error sending message",
+        description: "There was a problem sending your message. Please try again later.",
+        variant: "destructive"
+      });
+    }
   };
 
   return (
