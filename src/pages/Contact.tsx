@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -5,7 +6,6 @@ import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
-import emailjs from 'emailjs-com';
 import { 
   Mail, 
   Phone, 
@@ -15,7 +15,8 @@ import {
   CheckCircle, 
   Send,
   Map,
-  Clock
+  Clock,
+  Palette
 } from "lucide-react";
 
 const ContactPage = () => {
@@ -249,6 +250,16 @@ const ContactPage = () => {
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                       </a>
                     </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 rounded-full bg-primary/10">
+                        <Palette className="w-5 h-5 text-primary" />
+                      </div>
+                      <a href="https://www.behance.net/Kalasaiteja" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline group relative">
+                        behance.net/Kalasaiteja
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -283,6 +294,10 @@ const ContactPage = () => {
                 <a href="https://linkedin.com/in/kala-teja" target="_blank" rel="noopener noreferrer"
                    className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
                   <Linkedin className="w-5 h-5 text-primary" />
+                </a>
+                <a href="https://www.behance.net/Kalasaiteja" target="_blank" rel="noopener noreferrer"
+                   className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors">
+                  <Palette className="w-5 h-5 text-primary" />
                 </a>
               </div>
             </div>

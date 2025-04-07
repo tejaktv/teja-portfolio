@@ -138,6 +138,18 @@ export const Contact = () => {
                         <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
                       </a>
                     </div>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="p-3 rounded-full bg-primary/10">
+                        <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                      </div>
+                      <a href="https://www.behance.net/Kalasaiteja" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline group relative">
+                        behance.net/Kalasaiteja
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
