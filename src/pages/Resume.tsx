@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -93,7 +92,6 @@ const Resume = () => {
               </div>
             </div>
             
-            {/* Objective */}
             <div className={cn(
               "mb-10 opacity-0",
               isVisible && "animate-fade-in delay-200"
@@ -107,7 +105,36 @@ const Resume = () => {
               </p>
             </div>
             
-            {/* Education */}
+            <div className={cn(
+              "mb-10 opacity-0",
+              isVisible && "animate-fade-in delay-250"
+            )}>
+              <h3 className="text-xl font-bold mb-3">Work Experience</h3>
+              <div className="space-y-4 ml-0 md:ml-6">
+                <div className="border-l-4 border-primary pl-4">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between">
+                    <h4 className="font-bold">UI Developer</h4>
+                    <span className="text-sm text-foreground/70">June 2024 - Present</span>
+                  </div>
+                  <p className="text-foreground/80 mb-1">Asan Innovators</p>
+                  <p className="text-foreground/70">
+                    Currently working as a UI Developer, focusing on creating intuitive user interfaces and enhancing user experience through modern web technologies.
+                  </p>
+                </div>
+                
+                <div className="border-l-4 border-primary/60 pl-4">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between">
+                    <h4 className="font-bold">UX Researcher</h4>
+                    <span className="text-sm text-foreground/70">April 2024 - June 2024</span>
+                  </div>
+                  <p className="text-foreground/80 mb-1">Wilson Wings</p>
+                  <p className="text-foreground/70">
+                    Conducted user research, analyzed user behavior patterns, and provided insights to improve product design and user experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
             <div className={cn(
               "mb-10 opacity-0",
               isVisible && "animate-fade-in delay-300"
@@ -122,7 +149,6 @@ const Resume = () => {
               </div>
             </div>
             
-            {/* Virtual Internships */}
             <div className={cn(
               "mb-10 opacity-0",
               isVisible && "animate-fade-in delay-400"
@@ -161,7 +187,6 @@ const Resume = () => {
               </div>
             </div>
             
-            {/* Skills and Tools */}
             <div className={cn(
               "mb-10 opacity-0",
               isVisible && "animate-fade-in delay-500"
@@ -223,7 +248,6 @@ const Resume = () => {
               </div>
             </div>
             
-            {/* Certifications */}
             <div className={cn(
               "mb-10 opacity-0",
               isVisible && "animate-fade-in delay-600"
@@ -263,7 +287,6 @@ const Resume = () => {
               </div>
             </div>
             
-            {/* Extra-Curricular Activities */}
             <div className={cn(
               "opacity-0",
               isVisible && "animate-fade-in delay-700"
