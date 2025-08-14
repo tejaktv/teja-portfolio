@@ -1,52 +1,51 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Edit3, Video, Mic, TrendingUp, Monitor, Camera, Coins, Palette } from "lucide-react";
 
 type ActivityItem = {
-  icon: any;
+  icon: string;
   title: string;
   description: string;
 };
 
 const activities: ActivityItem[] = [
   {
-    icon: Edit3,
+    icon: "📝",
     title: "Content Creation",
     description: "Creating engaging digital content for various platforms."
   },
   {
-    icon: Video,
+    icon: "🎬",
     title: "Video Editing",
     description: "Producing and editing videos with professional quality."
   },
   {
-    icon: Mic,
+    icon: "🎤",
     title: "Public Speaking",
     description: "Delivering presentations and speaking at technical events."
   },
   {
-    icon: TrendingUp,
+    icon: "📊",
     title: "Trading and Investing",
     description: "Analyzing market trends and making strategic investments."
   },
   {
-    icon: Monitor,
+    icon: "🖥️",
     title: "Web Designing",
     description: "Creating intuitive and aesthetically pleasing websites."
   },
   {
-    icon: Camera,
+    icon: "📸",
     title: "Photography",
     description: "Capturing moments through creative photography."
   },
   {
-    icon: Coins,
+    icon: "💰",
     title: "Cryptocurrency Investment",
     description: "Researching and investing in blockchain technologies."
   },
   {
-    icon: Palette,
+    icon: "🎨",
     title: "UI/UX Designing",
     description: "Creating user-centered digital experiences."
   },
@@ -85,25 +84,21 @@ export const Activities = () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {activities.map((activity, index) => {
-            const IconComponent = activity.icon;
-            return (
-              <div
-                key={index}
-                className={cn(
-                  "professional-card p-6 text-center transition-all duration-300 hover:scale-105 group opacity-0 floating-element",
-                  isInView && `animate-fade-in delay-${Math.min(index * 100, 500)}`
-                )}
-                style={{ animationDelay: `${index * 0.5}s` }}
-              >
-                <div className="icon-wrapper w-16 h-16 mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <IconComponent className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-medium mb-2 gradient-text">{activity.title}</h3>
-                <p className="text-foreground/70 text-sm">{activity.description}</p>
+          {activities.map((activity, index) => (
+            <div
+              key={index}
+              className={cn(
+                "glass-card rounded-xl p-6 text-center transition-all duration-300 hover:shadow-xl hover:translate-y-[-5px] opacity-0",
+                isInView && `animate-fade-in delay-${Math.min(index * 100, 500)}`
+              )}
+            >
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                <span className="text-2xl">{activity.icon}</span>
               </div>
-            );
-          })}
+              <h3 className="text-lg font-medium mb-2">{activity.title}</h3>
+              <p className="text-foreground/70 text-sm">{activity.description}</p>
+            </div>
+          ))}
         </div>
 
         <div className={cn(

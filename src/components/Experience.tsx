@@ -1,7 +1,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
-import { Briefcase, GraduationCap, Calendar, MapPin } from "lucide-react";
 
 type ExperienceItem = {
   title: string;
@@ -105,53 +104,35 @@ export const Experience = () => {
               )}>
                 {/* Timeline dot */}
                 <div className={cn(
-                  "hidden md:block absolute left-1/2 top-6 transform -translate-x-1/2 w-5 h-5 rounded-full border-4 border-white z-10",
-                  experience.type === 'work' 
-                    ? "bg-gradient-to-r from-green-400 to-green-600 shadow-lg" 
-                    : "bg-gradient-to-r from-blue to-blue-dark shadow-lg"
+                  "hidden md:block absolute left-1/2 top-0 transform -translate-x-1/2 w-4 h-4 rounded-full",
+                  experience.type === 'work' ? "bg-primary" : "bg-primary/60"
                 )}></div>
                 
                 <div className={cn(
-                  "professional-card p-6 md:w-[45%] group",
-                  "transition-all duration-300 hover:scale-105",
-                  experience.type === 'work' && "border-l-4 border-green-500"
+                  "p-6 glass-card rounded-xl md:w-[45%]",
+                  "transition-all duration-300 hover:shadow-2xl hover:translate-y-[-5px]",
+                  experience.type === 'work' && "border-l-4 border-primary"
                 )}>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className={cn(
-                      "icon-wrapper w-10 h-10 flex items-center justify-center",
-                      experience.type === 'work' ? "bg-gradient-to-r from-green-400 to-green-600" : ""
-                    )}>
-                      {experience.type === 'work' ? (
-                        <Briefcase className="w-5 h-5 text-white" />
-                      ) : (
-                        <GraduationCap className="w-5 h-5 text-white" />
-                      )}
-                    </div>
-                    <h3 className="text-xl font-bold gradient-text">{experience.title}</h3>
+                  <div className="flex items-center gap-2 mb-2">
+                    <h3 className="text-xl font-bold text-primary">{experience.title}</h3>
                     {experience.type === 'work' && (
                       <span className="text-xs px-2 py-1 bg-green-100 text-green-800 rounded-full font-medium">
                         Work
                       </span>
                     )}
                   </div>
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-foreground/60" />
-                      <p className="text-foreground/70 font-medium">{experience.company}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <Calendar className="w-4 h-4 text-blue" />
+                  <div className="flex items-center justify-between mb-4">
+                    <p className="text-foreground/70 font-medium">{experience.company}</p>
                     <span className={cn(
-                      "text-sm px-3 py-1 rounded-full font-medium",
+                      "text-sm px-3 py-1 rounded-full",
                       experience.type === 'work' 
                         ? "bg-green-50 text-green-700 border border-green-200"
-                        : "bg-blue-50 text-blue-dark border border-blue-200"
+                        : "bg-primary/10 text-primary"
                     )}>
                       {experience.period}
                     </span>
                   </div>
-                  <p className="text-foreground/80 leading-relaxed">{experience.description}</p>
+                  <p className="text-foreground/80">{experience.description}</p>
                 </div>
                 
                 {/* Empty div for the other side of the timeline */}
