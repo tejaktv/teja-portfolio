@@ -1,27 +1,29 @@
 
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { Code2, Database, Cloud, Wrench, Laptop, Globe, Shield, Zap } from "lucide-react";
 
 type Skill = {
   name: string;
   proficiency: number; // 0-100
   category: "programming" | "tools" | "cloud" | "other";
+  icon: any;
 };
 
 const skills: Skill[] = [
-  { name: "Python", proficiency: 85, category: "programming" },
-  { name: "Java", proficiency: 75, category: "programming" },
-  { name: "JavaScript", proficiency: 80, category: "programming" },
-  { name: "HTML", proficiency: 95, category: "programming" },
-  { name: "CSS", proficiency: 85, category: "programming" },
-  { name: "SQL", proficiency: 80, category: "programming" },
-  { name: "C", proficiency: 75, category: "programming" },
-  { name: "Git", proficiency: 90, category: "tools" },
-  { name: "Linux", proficiency: 85, category: "tools" },
-  { name: "Windows", proficiency: 90, category: "tools" },
-  { name: "Figma", proficiency: 75, category: "tools" },
-  { name: "Adobe XD", proficiency: 70, category: "tools" },
-  { name: "AWS Services", proficiency: 70, category: "cloud" },
+  { name: "Python", proficiency: 85, category: "programming", icon: Code2 },
+  { name: "Java", proficiency: 75, category: "programming", icon: Code2 },
+  { name: "JavaScript", proficiency: 80, category: "programming", icon: Globe },
+  { name: "HTML", proficiency: 95, category: "programming", icon: Globe },
+  { name: "CSS", proficiency: 85, category: "programming", icon: Globe },
+  { name: "SQL", proficiency: 80, category: "programming", icon: Database },
+  { name: "C", proficiency: 75, category: "programming", icon: Code2 },
+  { name: "Git", proficiency: 90, category: "tools", icon: Wrench },
+  { name: "Linux", proficiency: 85, category: "tools", icon: Laptop },
+  { name: "Windows", proficiency: 90, category: "tools", icon: Laptop },
+  { name: "Figma", proficiency: 75, category: "tools", icon: Wrench },
+  { name: "Adobe XD", proficiency: 70, category: "tools", icon: Wrench },
+  { name: "AWS Services", proficiency: 70, category: "cloud", icon: Cloud },
 ];
 
 export const Skills = () => {
@@ -94,26 +96,32 @@ export const Skills = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleSkills.map((skill, index) => (
-            <div
-              key={skill.name}
-              className={cn(
-                "glass-card rounded-xl p-6 opacity-0",
-                isInView && `animate-fade-in delay-${Math.min(index * 100, 500)}`
-              )}
-            >
-              <div className="flex justify-between items-center mb-3">
-                <h3 className="font-medium text-lg">{skill.name}</h3>
-                <span className="text-sm text-foreground/70">{skill.proficiency}%</span>
+          {visibleSkills.map((skill, index) => {
+            const IconComponent = skill.icon;
+            return (
+              <div
+                key={skill.name}
+                className={cn(
+                  "professional-card p-6 opacity-0 group hover:scale-105 transition-all duration-300",
+                  isInView && `animate-fade-in delay-${Math.min(index * 100, 500)}`
+                )}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="icon-wrapper w-10 h-10 flex items-center justify-center">
+                    <IconComponent className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-medium text-lg">{skill.name}</h3>
+                  <span className="ml-auto text-sm font-bold text-blue">{skill.proficiency}%</span>
+                </div>
+                <div className="w-full bg-secondary rounded-full h-3 overflow-hidden">
+                  <div
+                    className="h-3 rounded-full transition-all duration-1000 ease-out bg-gradient-to-r from-blue to-blue-dark"
+                    style={{ width: isInView ? `${skill.proficiency}%` : "0%" }}
+                  ></div>
+                </div>
               </div>
-              <div className="w-full bg-secondary rounded-full h-2">
-                <div
-                  className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out"
-                  style={{ width: isInView ? `${skill.proficiency}%` : "0%" }}
-                ></div>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
