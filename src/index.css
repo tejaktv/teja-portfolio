@@ -35,6 +35,11 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
     
+    /* Blue theme colors */
+    --blue: 217 91% 60%;
+    --blue-light: 217 91% 70%;
+    --blue-dark: 217 91% 50%;
+    
     --radius: 0.75rem;
   }
   
@@ -48,6 +53,10 @@
   
   .glass-card {
     @apply bg-white/70 backdrop-blur-sm border border-white/20 shadow-xl;
+  }
+  
+  .header-shadow {
+    box-shadow: 0 4px 20px -2px hsl(var(--blue) / 0.15), 0 2px 8px -2px hsl(var(--blue) / 0.1);
   }
   
   .section-padding {
