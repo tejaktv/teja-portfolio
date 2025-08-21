@@ -12,6 +12,13 @@ type ExperienceItem = {
 
 const workExperience: ExperienceItem[] = [
   {
+    title: "Product Manager & UI/UX Designer",
+    company: "Switch2Next",
+    period: "Aug 2025 - Present",
+    description: "Leading UI/UX design and product management for the R&D Tax Credit IRS Memo 6001 Generator Project. Defining product roadmap, coordinating with cross-functional teams, and ensuring compliance with IRS guidelines. Designing and reviewing user flows, wireframes, and prototypes to ensure a seamless and compliant user experience.",
+    type: 'work'
+  },
+  {
     title: "UI Developer",
     company: "Asan Innovators",
     period: "June 2024 - Present",

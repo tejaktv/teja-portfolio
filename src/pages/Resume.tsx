@@ -113,6 +113,17 @@ const Resume = () => {
               <div className="space-y-4 ml-0 md:ml-6">
                 <div className="border-l-4 border-primary pl-4">
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
+                    <h4 className="font-bold">Product Manager & UI/UX Designer</h4>
+                    <span className="text-sm text-foreground/70">Aug 2025 - Present</span>
+                  </div>
+                  <p className="text-foreground/80 mb-1">Switch2Next</p>
+                  <p className="text-foreground/70">
+                    Leading UI/UX design and product management for the R&D Tax Credit IRS Memo 6001 Generator Project. Defining product roadmap, coordinating with cross-functional teams, and ensuring compliance with IRS guidelines. Designing and reviewing user flows, wireframes, and prototypes to ensure a seamless and compliant user experience.
+                  </p>
+                </div>
+                
+                <div className="border-l-4 border-primary pl-4">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <h4 className="font-bold">UI Developer</h4>
                     <span className="text-sm text-foreground/70">June 2024 - Present</span>
                   </div>
