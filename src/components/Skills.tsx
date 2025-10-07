@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
+import { IconType } from "react-icons";
 import { 
   SiPython, 
   SiJavascript, 
@@ -15,7 +16,6 @@ import {
   SiOpenjdk
 } from "react-icons/si";
 import { FaWindows } from "react-icons/fa";
-import { IconType } from "react-icons";
 
 type Skill = {
   name: string;
