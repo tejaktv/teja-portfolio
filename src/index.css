@@ -8,37 +8,37 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --foreground: 217 91% 35%;
     
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 217 91% 35%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 217 91% 35%;
     
-    --primary: 222 47% 11%;
+    --primary: 217 91% 45%;
     --primary-foreground: 210 40% 98%;
     
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222 47% 11.2%;
+    --secondary-foreground: 217 91% 35%;
     
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted-foreground: 217 71% 50%;
     
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 210 40% 98%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
     
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 217 91% 45%;
     
     /* Blue theme colors */
     --blue: 217 91% 60%;
     --blue-light: 217 91% 70%;
-    --blue-dark: 217 91% 50%;
+    --blue-dark: 217 91% 45%;
     
     --radius: 0.75rem;
   }
