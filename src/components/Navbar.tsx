@@ -129,12 +129,9 @@ export const Navbar = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div
-        className={cn(
-          "md:hidden fixed inset-x-0 bg-background shadow-lg transition-all duration-300 ease-in-out z-40",
-          isMobileMenuOpen ? "top-[64px] opacity-100 visible" : "top-0 opacity-0 invisible pointer-events-none"
-        )}
-      >
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed inset-x-0 top-[64px] bg-background/95 backdrop-blur-lg shadow-lg z-40 border-b border-border">
+
         <div className="container mx-auto px-6 py-6 flex flex-col space-y-4">
           <NavLink
             to="/"
@@ -197,7 +194,8 @@ export const Navbar = () => {
             Contact
           </NavLink>
         </div>
-      </div>
+        </div>
+      )}
     </header>
   );
 };
