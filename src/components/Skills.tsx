@@ -121,9 +121,8 @@ export const Skills = () => {
               <div className="flex items-center gap-4 mb-3">
                 <skill.icon className="w-12 h-12 text-primary" />
                 <div className="flex-1">
-                  <div className="flex justify-between items-center mb-2">
+                  <div className="mb-2">
                     <h3 className="font-medium text-lg">{skill.name}</h3>
-                    <span className="text-sm text-foreground/70">{skill.proficiency}%</span>
                   </div>
                   <div className="w-full bg-secondary rounded-full h-2">
                     <div
