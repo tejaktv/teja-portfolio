@@ -118,19 +118,9 @@ export const Skills = () => {
                 isInView && `animate-fade-in delay-${Math.min(index * 100, 500)}`
               )}
             >
-              <div className="flex items-center gap-4 mb-3">
+              <div className="flex items-center gap-4">
                 <skill.icon className="w-12 h-12 text-primary" />
-                <div className="flex-1">
-                  <div className="mb-2">
-                    <h3 className="font-medium text-lg">{skill.name}</h3>
-                  </div>
-                  <div className="w-full bg-secondary rounded-full h-2">
-                    <div
-                      className="bg-primary h-2 rounded-full transition-all duration-1000 ease-out"
-                      style={{ width: isInView ? `${skill.proficiency}%` : "0%" }}
-                    ></div>
-                  </div>
-                </div>
+                <h3 className="font-medium text-lg">{skill.name}</h3>
               </div>
             </div>
           ))}
