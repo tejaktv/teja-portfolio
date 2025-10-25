@@ -12,7 +12,6 @@ import {
   SiLinux,
   SiFigma,
   SiAdobexd,
-  SiAmazonwebservices,
   SiOpenjdk,
   SiSketch,
   SiFramer
@@ -41,7 +40,6 @@ const skills: Skill[] = [
   { name: "Adobe XD", proficiency: 70, category: "tools", icon: SiAdobexd },
   { name: "Sketch", proficiency: 75, category: "tools", icon: SiSketch },
   { name: "Framer", proficiency: 70, category: "tools", icon: SiFramer },
-  { name: "AWS Services", proficiency: 70, category: "cloud", icon: SiAmazonwebservices },
 ];
 
 export const Skills = () => {
