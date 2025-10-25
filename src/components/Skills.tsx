@@ -13,7 +13,9 @@ import {
   SiFigma,
   SiAdobexd,
   SiAmazonwebservices,
-  SiOpenjdk
+  SiOpenjdk,
+  SiSketch,
+  SiFramer
 } from "react-icons/si";
 import { FaWindows } from "react-icons/fa";
 
@@ -37,6 +39,8 @@ const skills: Skill[] = [
   { name: "Windows", proficiency: 90, category: "tools", icon: FaWindows },
   { name: "Figma", proficiency: 75, category: "tools", icon: SiFigma },
   { name: "Adobe XD", proficiency: 70, category: "tools", icon: SiAdobexd },
+  { name: "Sketch", proficiency: 75, category: "tools", icon: SiSketch },
+  { name: "Framer", proficiency: 70, category: "tools", icon: SiFramer },
   { name: "AWS Services", proficiency: 70, category: "cloud", icon: SiAmazonwebservices },
 ];
 
@@ -118,9 +122,9 @@ export const Skills = () => {
                 isInView && `animate-fade-in delay-${Math.min(index * 100, 500)}`
               )}
             >
-              <div className="flex items-center gap-4">
+              <div className="flex items-center justify-center md:justify-start gap-4">
                 <skill.icon className="w-12 h-12 text-primary" />
-                <h3 className="font-medium text-lg">{skill.name}</h3>
+                <h3 className="font-medium text-lg hidden md:block">{skill.name}</h3>
               </div>
             </div>
           ))}
