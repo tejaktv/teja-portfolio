@@ -2,8 +2,21 @@ import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { ProjectCard } from "@/components/ProjectCard";
 
-// Updated project data with SkillConnect added and Cloud-based File Management removed
 const projects = [
+  {
+    title: "VoloPay - Payments Platform",
+    description: "A comprehensive payments platform designed in Figma, streamlining financial operations with an intuitive user interface and seamless payment workflows for businesses.",
+    tags: ["Figma", "UI/UX Design", "Payments", "FinTech", "Product Design"],
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80",
+    link: "https://www.behance.net/gallery/234266119/VoloPay-PAYMENTS-PLATFORM",
+  },
+  {
+    title: "MedMinder - Medicine Reminder App",
+    description: "A thoughtfully designed mobile application for elderly users to manage their medication schedules. Features timely reminders and an easy-to-use interface tailored for senior citizens.",
+    tags: ["Figma", "UI/UX Design", "Healthcare", "Mobile App", "Accessibility"],
+    image: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&q=80",
+    link: "#",
+  },
   {
     title: "SkillConnect - MERN Stack Hackathon",
     description: "A web platform where college students can showcase their skills, connect with people who share similar interests, and join open chat rooms based on preferred skills. I took on UI/UX design and frontend development responsibilities, creating an intuitive and engaging user experience.",
