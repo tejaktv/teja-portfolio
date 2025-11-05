@@ -18,18 +18,18 @@ const projects = [
     link: "#",
   },
   {
+    title: "Bondly - Social Connection App",
+    description: "A socializing platform designed to help people make meaningful friendships and find partners. Features intuitive matching, chat functionality, and community building tools with a focus on authentic connections.",
+    tags: ["Figma", "UI/UX Design", "Social Media", "Mobile App", "Product Design"],
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80",
+    link: "#",
+  },
+  {
     title: "SkillConnect - MERN Stack Hackathon",
     description: "A web platform where college students can showcase their skills, connect with people who share similar interests, and join open chat rooms based on preferred skills. I took on UI/UX design and frontend development responsibilities, creating an intuitive and engaging user experience.",
     tags: ["MERN Stack", "React.js", "Node.js", "MongoDB", "UI/UX Design", "Figma", "Responsive Design"],
     image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80",
     link: "https://example.com/skillconnect",
-  },
-  {
-    title: "E-Commerce Mobile App",
-    description: "Developed a complete e-commerce solution with a responsive design, secure payment integration, and user-friendly interface. The app features product categorization, wishlists, and a streamlined checkout process.",
-    tags: ["Android", "Java", "UX/UI", "Payment Gateway", "Firebase"],
-    image: "https://images.unsplash.com/photo-1565492206137-0797b8f8ace5?auto=format&fit=crop&q=80",
-    link: "https://example.com/ecommerce",
   },
 ];
 
