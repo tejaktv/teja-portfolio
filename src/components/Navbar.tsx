@@ -28,18 +28,18 @@ export const Navbar = () => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
         isScrolled
-          ? "glass-morphism header-shadow py-4"
-          : "bg-transparent py-6"
+          ? "bg-white/90 backdrop-blur-custom header-shadow py-3"
+          : "bg-white/10 backdrop-blur-sm border-b border-white/20 py-5"
       )}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link 
           to="/" 
-          className="text-2xl md:text-3xl font-bold font-display smooth-transition heading-accent hover:scale-105"
+          className="text-xl md:text-2xl font-bold font-display smooth-transition"
         >
-          KT
+          Kala Teja
         </Link>
 
         {/* Desktop Navigation */}

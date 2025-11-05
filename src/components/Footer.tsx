@@ -5,17 +5,13 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="relative py-16 overflow-hidden">
-      {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-accent"></div>
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIuNSIgb3BhY2l0eT0iLjEiLz48L2c+PC9zdmc+')] opacity-10"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <footer className="bg-primary text-white py-12">
+      <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-2xl font-display font-bold mb-4 text-white">Kala Teja</h3>
-            <p className="text-white/90 mb-6 leading-relaxed">
-              Designer & Developer crafting unique digital experiences with passion and creativity.
+            <h3 className="text-xl font-display font-bold mb-4">Kala Teja</h3>
+            <p className="text-white/80 mb-4">
+              A passionate software engineer with expertise in web development, AI, and cybersecurity.
             </p>
             <div className="flex space-x-4">
               <a 
@@ -66,7 +62,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Quick Links</h3>
+            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
                 <Link to="/" className="text-white/80 hover:text-white transition-colors">Home</Link>
@@ -84,7 +80,7 @@ export const Footer = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Contact</h3>
+            <h3 className="text-xl font-bold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="flex items-center text-white/80">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

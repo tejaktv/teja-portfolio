@@ -8,13 +8,10 @@ import { Contact } from "@/components/Contact";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-muted/30 to-background">
+    <div className="min-h-screen">
       <Hero />
-      <div className="section-padding relative overflow-hidden">
-        {/* Decorative blobs */}
-        <div className="absolute -z-10 top-1/4 right-1/4 h-[50vh] w-[50vh] creative-blob bg-gradient-to-br from-primary/10 to-transparent blur-3xl"></div>
-        <div className="absolute -z-10 bottom-1/4 left-1/4 h-[50vh] w-[50vh] creative-blob bg-gradient-to-tr from-accent/10 to-transparent blur-3xl" style={{ animationDelay: '3s' }}></div>
-        
+      <div className="py-12 bg-gradient-to-b from-background to-background/90 relative">
+        <div className="absolute -z-10 top-1/4 right-1/4 h-[40vh] w-[40vh] rounded-full bg-indigo-500/5 blur-[80px]"></div>
         <Skills />
         <Experience />
         <Education />
