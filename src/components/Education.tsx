@@ -82,16 +82,8 @@ export const Education = () => {
                 <p className="text-foreground/70 mt-1">Proficient in creating mobile applications for Android platform</p>
               </li>
               <li className="border-l-2 border-primary pl-4 pb-4">
-                <h4 className="font-medium text-lg">Cybersecurity</h4>
-                <p className="text-foreground/70 mt-1">Training in security protocols and threat mitigation</p>
-              </li>
-              <li className="border-l-2 border-primary pl-4 pb-4">
                 <h4 className="font-medium text-lg">Data Analytics</h4>
                 <p className="text-foreground/70 mt-1">Skills in analyzing and interpreting complex datasets</p>
-              </li>
-              <li className="border-l-2 border-primary pl-4 pb-4">
-                <h4 className="font-medium text-lg">CLOUD</h4>
-                <p className="text-foreground/70 mt-1">Cloud computing infrastructure and management</p>
               </li>
               <li className="border-l-2 border-primary pl-4 pb-4">
                 <h4 className="font-medium text-lg">Product Management Fundamentals</h4>
