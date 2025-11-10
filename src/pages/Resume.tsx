@@ -16,21 +16,17 @@ const Resume = () => {
   }, []);
 
   const handleDownloadResume = () => {
-    // In a real app, this would trigger a download of the actual resume file
     toast.success("Resume download started", {
       description: "Your download will begin shortly."
     });
     
-    // Simulate a file download - in production this would be a real file URL
-    setTimeout(() => {
-      // Create a temporary link element
-      const link = document.createElement('a');
-      link.href = '/resume.pdf'; // This would be a real PDF in production
-      link.download = 'Kala_Teja_Resume.pdf';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    }, 1000);
+    // Create a temporary link element
+    const link = document.createElement('a');
+    link.href = '/TEJA_KTV_Resume.pdf';
+    link.download = 'TEJA_KTV_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
