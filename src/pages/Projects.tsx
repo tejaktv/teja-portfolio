@@ -31,6 +31,20 @@ const projects = [
     image: "https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80",
     link: "https://example.com/skillconnect",
   },
+  {
+    title: "Hims - Sanhar SGT",
+    description: "A comprehensive design project created in Figma, featuring thoughtful UI/UX design with a focus on user experience and visual consistency.",
+    tags: ["Figma", "UI/UX Design", "Product Design"],
+    image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&q=80",
+    link: "https://www.figma.com/design/c73IL3ODZF5Zv9JVjRlOFO/sanhar-SGT?node-id=0-1&t=jnz3LKeuEMNZxf3s-1",
+  },
+  {
+    title: "LitConnect - Book Reading App",
+    description: "A book reading application designed to connect readers, discover new books, and build a community around shared literary interests. Features an intuitive reading experience and social connectivity.",
+    tags: ["Figma", "UI/UX Design", "Mobile App", "Reading", "Social"],
+    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80",
+    link: "https://www.figma.com/design/yYl1lXqaRH4Gw9qrKDC3Wv/Litconnect?t=jnz3LKeuEMNZxf3s-1",
+  },
 ];
 
 const Projects = () => {
