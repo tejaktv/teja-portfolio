@@ -15,14 +15,14 @@ const projects = [
     description: "A thoughtfully designed mobile application for elderly users to manage their medication schedules. Features timely reminders and an easy-to-use interface tailored for senior citizens.",
     tags: ["Figma", "UI/UX Design", "Healthcare", "Mobile App", "Accessibility"],
     image: "https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&q=80",
-    link: "#",
+    link: "https://tejaktv.netlify.app/",
   },
   {
     title: "Bondly - Social Connection App",
     description: "A socializing platform designed to help people make meaningful friendships and find partners. Features intuitive matching, chat functionality, and community building tools with a focus on authentic connections.",
     tags: ["Figma", "UI/UX Design", "Social Media", "Mobile App", "Product Design"],
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80",
-    link: "#",
+    link: "https://www.figma.com/design/aiOEv7pXFzLCMrSGcbLk1O/bondly?t=jnz3LKeuEMNZxf3s-1",
   },
   {
     title: "SkillConnect - MERN Stack Hackathon",
