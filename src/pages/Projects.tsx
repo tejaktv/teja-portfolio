@@ -39,11 +39,11 @@ const projects = [
     link: "https://www.figma.com/design/c73IL3ODZF5Zv9JVjRlOFO/sanhar-SGT?node-id=0-1&t=jnz3LKeuEMNZxf3s-1",
   },
   {
-    title: "LitConnect - Book Reading App",
-    description: "A book reading application designed to connect readers, discover new books, and build a community around shared literary interests. Features an intuitive reading experience and social connectivity.",
-    tags: ["Figma", "UI/UX Design", "Mobile App", "Reading", "Social"],
-    image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80",
-    link: "https://www.figma.com/design/yYl1lXqaRH4Gw9qrKDC3Wv/Litconnect?t=jnz3LKeuEMNZxf3s-1",
+    title: "SnapBuddy - Event Bookings Platform",
+    description: "An event bookings platform designed in Figma, enabling users to discover, book, and manage events seamlessly with an intuitive and visually engaging interface.",
+    tags: ["Figma", "UI/UX Design", "Mobile App", "Events", "Bookings"],
+    image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80",
+    link: "https://www.figma.com/design/sVFarBPupmCbcKfDghEC1m/SnapBuddy-App-UI?t=jnz3LKeuEMNZxf3s-1",
   },
 ];
 
