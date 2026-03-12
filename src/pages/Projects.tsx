@@ -67,22 +67,7 @@ const Projects = () => {
       <div className="absolute -z-10 top-1/3 left-1/4 h-[30vh] w-[30vh] rounded-full bg-indigo-500/5 blur-[100px]"></div>
       
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-16">
-          {/* Profile section */}
-          <div className={cn(
-            "opacity-0 transition-all duration-700 transform translate-y-4",
-            isVisible && "opacity-100 translate-y-0"
-          )}>
-            <div className="w-32 h-48 rounded-xl overflow-hidden border-4 border-primary/20 shadow-xl">
-              <img 
-                src="/lovable-uploads/fea1a9e7-da13-4f3e-8c3b-503ef36fe50b.png" 
-                alt="Kala Tirumala"
-                className="w-full h-full object-cover object-center" 
-              />
-            </div>
-          </div>
-          
-          <div className="text-center md:text-left">
+        <div className="text-center md:text-left mb-16">
             <h1 className={cn(
               "text-4xl md:text-5xl font-display font-bold mb-4 opacity-0 transition-all duration-700 delay-100",
               isVisible && "opacity-100"
@@ -100,7 +85,6 @@ const Projects = () => {
               </p>
             </div>
           </div>
-        </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {projects.map((project, index) => (
