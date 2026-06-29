@@ -109,6 +109,17 @@ const Resume = () => {
               <div className="space-y-4 ml-0 md:ml-6">
                 <div className="border-l-4 border-primary pl-4">
                   <div className="flex flex-col md:flex-row md:items-center justify-between">
+                    <h4 className="font-bold">Associate Product Manager</h4>
+                    <span className="text-sm text-foreground/70">April 2026 - Present</span>
+                  </div>
+                  <p className="text-foreground/80 mb-1">Eventbeep Technoservices Pvt Ltd, Pune, Maharashtra</p>
+                  <p className="text-foreground/70">
+                    Leading the UniBeep vertical end-to-end across design, technology, and revenue generation. Writing PRDs and driving implementation of product strategies for the placement-readiness platform. Engineered and overhauled LMS software, enhancing usability and feature delivery for partner institutions. Driving institutional partnerships and go-to-market initiatives to grow platform adoption and revenue.
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-primary pl-4">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between">
                     <h4 className="font-bold">Product Manager & UI/UX Designer</h4>
                     <span className="text-sm text-foreground/70">Aug 2025 - Present</span>
                   </div>
