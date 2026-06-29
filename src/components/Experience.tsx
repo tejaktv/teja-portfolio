@@ -12,6 +12,13 @@ type ExperienceItem = {
 
 const workExperience: ExperienceItem[] = [
   {
+    title: "Associate Product Manager",
+    company: "Eventbeep Technoservices Pvt Ltd, Pune, Maharashtra",
+    period: "April 2026 - Present",
+    description: "Leading the UniBeep vertical end-to-end across design, technology, and revenue generation. Writing PRDs and driving implementation of product strategies for the placement-readiness platform. Engineered and overhauled LMS software, enhancing usability and feature delivery for partner institutions. Driving institutional partnerships and go-to-market initiatives to grow platform adoption and revenue.",
+    type: 'work'
+  },
+  {
     title: "Product Manager & UI/UX Designer",
     company: "Switch2Next",
     period: "Aug 2025 - Present",
